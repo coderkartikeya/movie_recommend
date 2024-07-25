@@ -61,7 +61,7 @@ def recommend_movie(movie, df, vectors, similarity):
         
     return list1
 # Wrapper function definition
-file_path = 'server/movies_recommend.csv'
+file_path = 'server/api/movies_recommend.csv'
 df, vectors, similarity = main(file_path)
 def recommend_movie_wrapper(movie):   
     return recommend_movie(movie, df, vectors, similarity)
