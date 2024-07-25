@@ -23,5 +23,6 @@ def movie():
         return jsonify({'recommendations': "not get"})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
-
+if __name__ == '__main__':
+    app.run(port=5000,debug=True)
 
