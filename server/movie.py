@@ -6,6 +6,7 @@ from nltk.stem.porter import PorterStemmer
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import json
+import os
 
 df = None
 vectors = None
@@ -61,7 +62,7 @@ def recommend_movie(movie, df, vectors, similarity):
         
     return list1
 # Wrapper function definition
-file_path = 'server/api/movies_recommend.csv'
+file_path = os.path.join(os.path.dirname(__file__), 'data.csv')
 df, vectors, similarity = main(file_path)
 def recommend_movie_wrapper(movie):   
     return recommend_movie(movie, df, vectors, similarity)
